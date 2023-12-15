@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard'
 import Profile from './pages/Profile'
 import Settings from './pages/Settings'
 import TaskDetails from './pages/TaskDetails'
+import NotFound from './pages/NotFound'
 
 function App() {
 
@@ -40,6 +41,11 @@ function App() {
             <Link to="/tasks/2" >Tarefa 2</Link>
             <Link to="/tasks/3" >Tarefa 3</Link>
         </div>
+        {/* 6 - Rota 404 */}
+        <div>
+          <h2>Itens</h2>
+          <Link to="/item/1">Item 1</Link>
+        </div>  
       </nav>        
 
       <Routes>
@@ -56,6 +62,8 @@ function App() {
           <Route path='profile' element={<Profile />} /> 
           <Route path='settings' element={<Settings />} />                    
         </Route>
+        {/* 6 - Rota 404 */}        
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </>
   )
